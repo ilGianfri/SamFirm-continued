@@ -160,6 +160,7 @@ namespace SamFirm
                 //파일이름의 기본값을 Model_Region_LastModified_Version으로 한다.
                 string filename = string.Join("_", new string[] { FW.Model, FW.LastModified.Substring(0, 8), FW.Region, FW.Version.Replace('/', '-') });
                 saveFileDialog1.FileName = filename + extension;
+                saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
                 //확인 버튼을 누르지 않으면 다운로드를 취소한다.
                 if (saveFileDialog1.ShowDialog() != DialogResult.OK)
